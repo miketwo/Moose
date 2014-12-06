@@ -1,0 +1,7 @@
+hg+http://bitbucket.org/pygame/pygame
+kezmenu
+
+# Test requirements
+mock
+nose
+coverage

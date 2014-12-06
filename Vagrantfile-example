@@ -1,0 +1,38 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# INSTRUCTIONS:
+#    Copy this to a file called 'Vagrantfile', then modify as necessary.
+
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.box = "hashicorp/precise32"
+
+  config.vm.provider "virtualbox" do |vb|
+    # VM customizations.  Change these depending on your personal hardware
+    # setup.
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--cpus", "2"]
+  end
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # If true, then any SSH connections made will enable agent forwarding.
+  # Default value: false
+  config.ssh.forward_agent = true
+
+  # SSH forwarding doesn't work for root user unless we modify the box.
+  # See: https://github.com/mitchellh/vagrant/issues/1303
+  # Also, we do an apt-get update to pre-seed the box and install
+  # dependencies
+  config.vm.provision :shell do |shell|
+    shell.inline = "touch $1 && chmod 0440 $1 && echo $2 > $1; apt-get update && /vagrant/install_dependencies.sh"
+    shell.args = %q{/etc/sudoers.d/root_ssh_agent "Defaults    env_keep += \"SSH_AUTH_SOCK\""}
+  end
+end
