@@ -2,4 +2,4 @@ python-pip
 python-box2d
 mercurial
 tiled
-
+python-pygame

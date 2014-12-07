@@ -16,6 +16,7 @@ import logging
 logger = logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 logger = logging.getLogger("tmx")
 
+
 class Tile(object):
     def __init__(self, gid, surface, tileset):
         self.gid = gid
@@ -83,7 +84,8 @@ class Tileset(object):
             if c.tag == "image":
                 # create a tileset
                 # this is a relative path from the map file
-                filename = cls._fix_relative_filenames(c.attrib['source'], base_dir)
+                filename = cls._fix_relative_filenames(
+                    c.attrib['source'], base_dir)
                 tileset.add_image(filename)
             elif c.tag == 'tile':
                 gid = tileset.firstgid + int(c.attrib['id'])
@@ -105,7 +107,7 @@ class Tileset(object):
         for line in xrange(image.get_height() / self.tile_height):
             for column in xrange(image.get_width() / self.tile_width):
                 pos = Rect(column * self.tile_width, line * self.tile_height,
-                    self.tile_width, self.tile_height)
+                           self.tile_width, self.tile_height)
                 self.tiles.append(Tile(id, image.subsurface(pos), self))
                 id += 1
 

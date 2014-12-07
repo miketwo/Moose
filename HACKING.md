@@ -13,9 +13,13 @@ You will need to have vagrant and virtualbox installed.
 
 Setup Dev Environment
 --------------------------
-#. `cp Vagrantfile-template Vagrantfile`
-#. Modify the Vagrantfile as necessary for your hardware (change memory, cpus, etc...)
-#. `vagrant up`
+To setup the dev environment, follow these commands (on a Linux box)
+
+`cp Vagrantfile-template Vagrantfile`
+
+Modify the Vagrantfile as necessary for your hardware (adjust memory, # cpus, etc...)
+
+`vagrant up`
 
 
 Coding Style
