@@ -92,6 +92,6 @@ Map Editor
 Notes
 -----
 
-Installing pygame in virtualenv is a pain, I need to switch to Virtualbox.
+Installing pygame in virtualenv is a pain, I need to switch to Virtualbox or Docker.
 
 
