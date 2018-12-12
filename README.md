@@ -1,6 +1,28 @@
 Moose On The Move
 =================
 
+Installation
+------------
+Right now, I got it running in docker. (Which is admittedly a little weird for a UI app, but go with it.)
+
+Just do:
+```
+./run.sh
+```
+
+This will build and run the game.
+
+Development
+-----------
+```
+./dev.sh
+```
+This mounts the current directory inside the container so that changes are reflected inside. So you can make a change and run the game in a tight loop.
+
+
+Story
+=====
+
 **The following will be a complete rambling stream of conciousness until I can organize it better.**
 
 I want to create a top-down, 2d arcade game in which you walk a dog.  Not just any dog, but my dog -- Sheamus Jefferson Cooper III ("Moose"). He's a crazyface snugglebug, and that's what will make this fun.
@@ -65,8 +87,7 @@ See [HACKING.md](HACKING.md)
 
 Todo
 ----
-    - stand up basic demo
-    - get 1st unit test up
+    - get unit testing, CI/CD up
     - installation/usage instructions
     - setup pip packaging?
     - many other things...
