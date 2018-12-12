@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 docker build -t game .
 
@@ -8,5 +8,6 @@ ARG=${1:-/bin/bash}
 docker run -it \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --device /dev/snd \
     -v $(pwd):/app \
     game $ARG

@@ -1,29 +1,10 @@
 Moose On The Move
 =================
 
-Dependencies
-------------
-Ubuntu 16.04 (not technically required, but bash scripts might need tweaking other distros/versions)
-Docker
+![Intro Screen](docs/intro-screen.png)
 
-
-Installation
-------------
-Right now, I got it running in docker. (Which is admittedly a little weird for a UI app, but go with it.)
-
-Just do:
-```
-./run.sh
-```
-
-This will build and run the game. If it doesn't work, it's probably a problem with mounting the X11 DISPLAY -- you'll need to tweak the docker run command for your system.
-
-Development
------------
-```
-./dev.sh
-```
-This mounts the current directory inside the container so that changes are reflected inside. So you can make a change and run the game in a tight loop.
+### Contributing/Installation/Usage
+See [HACKING.md](HACKING.md)
 
 
 Story
@@ -86,17 +67,11 @@ All levels (except some early training levels) are timed. We'll start with linea
 [Level Editor](http://www.mapeditor.org/)
 
 
-Contributing
-------------
-See [HACKING.md](HACKING.md)
-
-
 Todo
 ----
     - get unit testing, CI/CD up
-    - installation/usage instructions
-    - setup pip packaging?
-    - many other things...
+    - figure out why tiles don't align on map
+    - Get dog in the game and following the player
 
 
 Resources
@@ -119,6 +94,5 @@ Map Editor
 Notes
 -----
 
-Installing pygame in virtualenv is a pain, I need to switch to Virtualbox or Docker.
-
+Docker is cool for isolation, but hard to connect to video and sound.
 

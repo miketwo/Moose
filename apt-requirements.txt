@@ -3,3 +3,4 @@ python-box2d
 mercurial
 tiled
 python-pygame
+alsaplayer-alsa
