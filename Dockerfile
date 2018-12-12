@@ -12,4 +12,6 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
-CMD ./moosegame.py
+ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]
+
+CMD ["game"]

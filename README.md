@@ -1,6 +1,12 @@
 Moose On The Move
 =================
 
+Dependencies
+------------
+Ubuntu 16.04 (not technically required, but bash scripts might need tweaking other distros/versions)
+Docker
+
+
 Installation
 ------------
 Right now, I got it running in docker. (Which is admittedly a little weird for a UI app, but go with it.)
@@ -10,7 +16,7 @@ Just do:
 ./run.sh
 ```
 
-This will build and run the game.
+This will build and run the game. If it doesn't work, it's probably a problem with mounting the X11 DISPLAY -- you'll need to tweak the docker run command for your system.
 
 Development
 -----------

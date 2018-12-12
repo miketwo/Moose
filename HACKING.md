@@ -2,24 +2,29 @@ HACKING
 =================================
 If you want to help, here's how.
 
-Pre-reqs
+Dependencies
 ------------
-You will need to have vagrant and virtualbox installed.
-
-`apt-get vagrant virtualbox`
-
-(Tested with vagrant 1.4.1 and VirtualBox 4.1.12_Ubuntu)
+Ubuntu 16.04 (not technically required, but bash scripts might need tweaking other distros/versions)
+Docker
 
 
-Setup Dev Environment
---------------------------
-To setup the dev environment, follow these commands (on a Linux box)
+Installation
+------------
+Right now, I got it running in docker. (Which is admittedly a little weird for a UI app, but go with it.)
 
-`cp Vagrantfile-template Vagrantfile`
+Just do:
+```
+./run.sh
+```
 
-Modify the Vagrantfile as necessary for your hardware (adjust memory, # cpus, etc...)
+This will build and run the game. If it doesn't work, it's probably a problem with mounting the X11 DISPLAY -- you'll need to tweak the docker run command for your system.
 
-`vagrant up`
+Development
+-----------
+```
+./dev.sh
+```
+This mounts the current directory inside the container so that changes are reflected inside. So you can make a change and run the game in a tight loop.
 
 
 Coding Style
